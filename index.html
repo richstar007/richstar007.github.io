@@ -3,143 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Little Blue Hut | Fresh Seafood & Shellfish</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title>The Little Blue Hut | Fresh Seafood</title>
 
 <style>
-
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #e6f4fb, #cfe9f7);
-    color: #1c2b39;
+    font-family: Arial, sans-serif;
+    background-color: #f4f9ff;
+}
+
+/* HEADER */
+header {
+    background: #0077b6;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* SLIDING MENU */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #023e8a;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+
+.side-menu a:hover {
+    background-color: #0077b6;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+}
+
+/* HERO */
+.hero {
     text-align: center;
+    padding: 40px 20px;
+    background: #caf0f8;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 50px 20px;
-}
-
-h1 {
-    font-size: 34px;
-    color: #1f4f8b;
+.hero h1 {
     margin-bottom: 10px;
 }
 
-.tagline {
-    font-size: 18px;
-    margin-bottom: 30px;
-    font-weight: 500;
+/* SECTIONS */
+section {
+    padding: 30px 20px;
 }
 
-.section {
-    margin: 35px 0;
-    font-size: 16px;
-    line-height: 1.8;
+h2 {
+    color: #0077b6;
 }
 
-.highlight {
-    font-weight: 600;
-    color: #1f4f8b;
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
 }
 
-.button {
-    display: block;
-    background-color: #1f4f8b;
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* FOOTER */
+footer {
+    background: #0077b6;
     color: white;
-    padding: 14px;
-    margin: 12px auto;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    width: 80%;
-    max-width: 300px;
-    transition: 0.3s;
+    text-align: center;
+    padding: 15px;
 }
-
-.button:hover {
-    background-color: #163a66;
-}
-
-.footer {
-    margin-top: 50px;
-    font-size: 14px;
-    opacity: 0.7;
-}
-
-a {
-    color: #1f4f8b;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 500px) {
-    h1 {
-        font-size: 26px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+    <div class="logo">The Little Blue Hut</div>
+    <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
 
-<h1>🦞 The Little Blue Hut</h1>
-    <img src="logo.jpeg.JPG" alt="The Little Blue Hut Logo" style="width:100%; max-width:400px; margin-bottom:20px;">
-
-<div class="tagline">
-Fresh Seafood & Shellfish
+<!-- SLIDE MENU -->
+<div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">×</a>
+    <a href="#about">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#opening">Opening Times</a>
+    <a href="https://www.facebook.com/trawlermanscatch" target="_blank">Facebook</a>
 </div>
 
-<div class="section">
-📍 <strong>Location:</strong><br>
-South Street,<br>
-Queenborough,<br>
-Sheppey,<br>
-ME11 5AF
-<br><br>
-📞 <strong>Phone:</strong> 
-<a href="tel:07734207042">07734 207042</a><br><br>
-
-⏰ <strong>Opening Times:</strong><br>
-Friday – Sunday<br>
-10am – 4pm
+<!-- HERO -->
+<div class="hero">
+    <h1>Fresh Seafood & Shellfish</h1>
+    <p>Locally sourced • Hand selected • Beautifully presented</p>
 </div>
 
-<div class="section">
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        At The Little Blue Hut, we are committed to bringing you the highest-quality,
+        responsibly sourced seafood that not only tastes exceptional but looks stunning.
+        Every product is carefully hand-selected and tasted before being served.
+    </p>
+</section>
 
-<div class="highlight">Fresh Seafood & Shellfish 🦐</div>
-Jacket Potatoes & Snacks<br>
-☕ Hot Drinks • 🍺 Licensed Bar<br>
-Outdoor Seating Area<br>
-Toilets Nearby<br>
-🚚 Deliveries Available
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="images/seafood1.jpg" alt="Fresh seafood">
+        <img src="images/seafood2.jpg" alt="Shellfish display">
+        <img src="images/seafood3.jpg" alt="Seafood platter">
+        <img src="images/seafood4.jpg" alt="Oysters and prawns">
+    </div>
+</section>
 
-</div>
+<!-- OPENING TIMES -->
+<section id="opening">
+    <h2>Opening Times</h2>
+    <p>
+        Monday – Closed<br>
+        Tuesday – 9am – 4pm<br>
+        Wednesday – 9am – 4pm<br>
+        Thursday – 9am – 4pm<br>
+        Friday – 9am – 5pm<br>
+        Saturday – 9am – 5pm<br>
+        Sunday – 10am – 3pm (Bank Holiday Mondays)
+    </p>
+</section>
 
-<div class="section">
-<a class="button" href="https://www.google.com/maps/search/?api=1&query=South+Street,+Queenborough,+Sheppey,+ME11+5AF" target="_blank">
-📍 View on Google Maps
-</a>
+<footer>
+    © 2026 The Little Blue Hut | Fresh Local Seafood
+</footer>
 
-<a class="button" href="https://facebook.com" target="_blank">
-👍 Facebook Page
-</a>
-</div>
+<script>
+function openMenu() {
+    document.getElementById("sideMenu").style.width = "250px";
+}
 
-<div class="footer">
-Queenborough Harbour • Freshly Prepared Daily
-</div>
-
-</div>
+function closeMenu() {
+    document.getElementById("sideMenu").style.width = "0";
+}
+</script>
 
 </body>
 </html>
