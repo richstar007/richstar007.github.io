@@ -41,16 +41,16 @@ cursor:pointer;
 }
 
 nav{
-position:fixed;
-left:-260px;
-top:0;
-width:260px;
-height:100%;
-background:#0f3a4a;
-padding-top:60px;
-transition:.3s;
+  position:fixed;
+  left:-260px;
+  top:0;
+  width:260px;
+  height:100%;
+  background:#0f3a4a;
+  padding-top:60px;
+  transition:left .3s ease;
+  z-index:1000;
 }
-
 nav a{
 display:block;
 color:white;
@@ -160,35 +160,33 @@ width="100%" height="300" loading="lazy"></iframe>
 </section>
 
 <script>
+// open/close hamburger
 function toggleMenu(){
-const menu=document.getElementById("menu");
-menu.style.left=(menu.style.left==="0px")?"-260px":"0px";
+  const menu=document.getElementById("menu");
+
+  if(menu.style.left==="0px"){
+    menu.style.left="-260px";
+    menu.style.pointerEvents="none";
+  }else{
+    menu.style.left="0px";
+    menu.style.pointerEvents="auto";
+  }
 }
-</script>
-<div style="background:#e6f4ff; padding:14px; text-align:center; font-weight:600; font-size:15px; border-top:2px solid #b5dcff;">
-  🚤 Boat trips also available — please enquire with our staff
-</div><script>
+
+// show a page section
 function showSection(id){
   // hide all sections
   document.querySelectorAll("section").forEach(sec=>{
     sec.style.display="none";
   });
 
-  // show selected section
+  // show chosen section
   document.getElementById(id).style.display="block";
 
-  // close menu
-  document.getElementById("menu").style.left="-260px";
-}
-
-// hamburger open/close
-function toggleMenu(){
+  // close menu after click
   const menu=document.getElementById("menu");
-  if(menu.style.left==="0px"){
-    menu.style.left="-260px";
-  }else{
-    menu.style.left="0px";
-  }
+  menu.style.left="-260px";
+  menu.style.pointerEvents="none";
 }
 </script>
 </body>
