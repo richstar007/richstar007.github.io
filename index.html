@@ -1,4 +1,4 @@
-<e!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,199 +6,168 @@
 <title>The Little Blue Hut</title>
 
 <style>
+html{scroll-behavior:smooth;}
+
 body{
-margin:0;
-font-family:system-ui,Arial;
-background:#f7f9fb;
-color:#1c2b33;
+  margin:0;
+  font-family:system-ui,Arial,sans-serif;
+  background:#f4f8fb;
+  color:#1b2b34;
 }
 
+/* top bar /
+.topbar{
+  background:#082833;
+  color:#fff;
+  text-align:center;
+  padding:8px;
+  font-size:14px;
+}
+
+/ header /
 header{
-background:#0f3a4a;
-color:white;
-padding:24px 18px;
-text-align:center;
-position:relative;
+  background:#0f3a4a;
+  color:#fff;
+  padding:26px 18px;
+  text-align:center;
+  position:relative;
 }
 
-header h1{
-margin:0;
-font-size:32px;
+header h1{margin:0;font-size:30px;}
+.tagline{opacity:.9;margin-top:6px}
+
+/ hamburger /
+.hamburger{
+  position:absolute;
+  left:15px;
+  top:22px;
+  font-size:26px;
+  cursor:pointer;
 }
 
-.tagline{
-margin-top:6px;
-font-size:18px;
-opacity:.9;
-}
-
-.menu-btn{
-position:absolute;
-left:15px;
-top:18px;
-font-size:26px;
-cursor:pointer;
-}
-
-nav{
+/ slide menu /
+#menu{
   position:fixed;
-  left:-260px;
   top:0;
+  left:-260px;
   width:260px;
   height:100%;
-  background:#0f3a4a;
-  padding-top:60px;
-  transition:left .3s ease;
+  background:#114b5f;
+  padding-top:80px;
+  transition:.3s;
   z-index:1000;
 }
-nav a{
-display:block;
-color:white;
-padding:14px 20px;
-text-decoration:none;
-font-size:18px;
-}
 
-nav a:hover{
-background:#125066;
-}
-
-.fb{
-background:#1877f2;
-margin:15px;
-border-radius:8px;
-text-align:center;
-font-weight:bold;
-}
-
-section{
-padding:30px 18px;
-max-width:900px;
-margin:auto;
-}
-
-h2{
-margin-top:0;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:12px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-}
-
-iframe{
-border-radius:12px;
-}/* Hide all pages by default */
-section{
-  display:none;
-}
-
-/* Show homepage first */
-#about{
+#menu a{
   display:block;
+  color:white;
+  padding:18px 22px;
+  text-decoration:none;
+  font-size:18px;
+}
+#menu a:hover{background:#1b6b84;}
+#menu hr{border:none;border-top:1px solid rgba(255,255,255,.2);margin:14px 18px;}
+
+section{
+  padding:40px 18px;
+  max-width:900px;
+  margin:auto;
+  scroll-margin-top:90px;
+}
+
+h2{color:#0f3a4a;}
+
+/ gallery /
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+}
+.gallery img{width:100%;border-radius:10px;}
+
+/ socials /
+.socials{display:flex;gap:12px;margin-top:20px;}
+.socials a{
+  padding:12px 18px;
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+.insta{background:#d62976;}
+.tiktok{background:#111;}
+
+/ notice */
+.notice{
+  background:#e6f4ff;
+  padding:14px;
+  text-align:center;
+  font-weight:500;
+  margin-top:40px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="topbar">🕒 Open Friday – Sunday • 10am – 4pm</div>
+
+<div id="menu">
+<a href="#about" onclick="toggleMenu()">About</a>
+<a href="#gallery" onclick="toggleMenu()">Gallery</a>
+<a href="#find" onclick="toggleMenu()">Find Us</a>
+<hr>
+<a href="https://www.instagram.com/thelittlebluehut_qb" target="_blank">Instagram</a>
+<a href="https://www.tiktok.com/@thelittlebluehut.qb" target="_blank">TikTok</a>
+<hr>
+<a href="menu.pdf" target="_blank">📄 View Menu</a>
+</div>
+
 <header>
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
 <h1>The Little Blue Hut</h1>
 <div class="tagline">Quality Seafood & Shellfish</div>
 </header>
 
-<nav id="menu">
-<a href="#" onclick="showSection('about');toggleMenu()">About</a>
-<a href="#" onclick="showSection('gallery');toggleMenu()">Gallery</a>
-<a href="#" onclick="showSection('find');toggleMenu()">Find Us</a>
-<a class="fb" href="https://www.facebook.com/trawlermanscatch" target="_blank">Visit our Facebook</a>
-</nav>
-
 <section id="about">
 <h2>About Us</h2>
 <p>
-At The Little Blue Hut, we are committed to bringing you the highest-quality, responsibly sourced seafood that not only tastes exceptional but also looks stunning. All of our seafood is thoughtfully hand-selected and carefully tasted before being served.<br><br>
-
-We also sell hot & cold drinks, a selection of alcoholic beverages and delicious baguettes and freshly baked jacket potatoes.<br><br>
-
-We also offer free delivery to Sheppey and Sittingbourne (subject to a min £20 spend).
+At The Little Blue Hut we provide responsibly sourced seafood and shellfish,
+carefully selected for quality and freshness.
+We also serve drinks, snacks, baguettes and freshly baked jacket potatoes.
 </p>
+
+<div class="socials">
+<a class="insta" href="https://www.instagram.com/thelittlebluehut_qb" target="_blank">Instagram</a>
+<a class="tiktok" href="https://www.tiktok.com/@thelittlebluehut.qb" target="_blank">TikTok</a>
+</div>
 </section>
 
 <section id="gallery">
 <h2>Gallery</h2>
 <div class="gallery">
-<img src="images/IMG_0294.jpeg">
-<img src="images/IMG_0634.jpeg">
-<img src="images/IMG_0638.jpeg">
-<img src="images/IMG_0641.jpeg">
-<img src="images/IMG_0643.jpeg">
-<img src="images/IMG_0644.jpeg">
-<img src="images/IMG_0645.jpeg">
-<img src="images/IMG_0646.jpeg">
-<img src="images/IMG_0648.jpeg">
-<img src="images/IMG_0649.jpeg">
-<img src="images/IMG_5691.jpeg">
-<img src="images/IMG_6264.jpeg">
-<img src="images/IMG_6905.jpeg">
-<img src="images/IMG_6906.jpeg">
+<img src="images/photo1.jpg">
+<img src="images/photo2.jpg">
+<img src="images/photo3.jpg">
+<img src="images/photo4.jpg">
+<img src="images/photo5.jpg">
 </div>
 </section>
 
 <section id="find">
 <h2>Find Us</h2>
-<iframe
-src="https://maps.google.com/maps?q=The%20Little%20Blue%20Hut%2C%20South%20Street%2C%20Queenborough%2C%20ME11%205AF&t=&z=15&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300" loading="lazy"></iframe>
+<iframe src="https://maps.google.com/maps?q=Queenborough&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300" style="border:0;border-radius:12px;" loading="lazy"></iframe>
 </section>
 
+<div class="notice">🚤 Boat trips also available — please enquire with our staff</div>
+
 <script>
-// open/close hamburger
-// open / close hamburger
 function toggleMenu(){
-    const menu = document.getElementById("menu");
-
-    if(menu.style.left === "0px"){
-        menu.style.left = "-100%";
-        menu.style.pointerEvents = "none";
-        document.body.style.overflow = "auto";
-    }else{
-        menu.style.left = "0px";
-        menu.style.pointerEvents = "auto";
-        document.body.style.overflow = "hidden";
-    }
-}
-
-
-// show a page section
-function showSection(id){
-
-  // hide all sections
-  document.querySelectorAll("section").forEach(sec=>{
-    sec.style.display="none";
-  });
-
-  // show selected section
-  
-document.getElementById(id).style.display = "block";
-  // scroll to top (fixes iPhone freeze)
-  window.scrollTo(0,0);
-
-  menu.style.pointerEvents="none";
-  192 const menu=document.getElementById("menu")
-193 menu.style.left="-260px";
-document.body.style.overflow = "auto";
-195
-196 // allow page to scroll again
-197 document.body.style.overflow
+  const menu=document.getElementById("menu");
+  menu.style.left = (menu.style.left==="0px") ? "-260px" : "0px";
 }
 </script>
+
 </body>
 </html>
