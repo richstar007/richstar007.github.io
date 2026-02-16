@@ -115,10 +115,9 @@ section{
 </header>
 
 <nav id="menu">
-<a href="#about" onclick="toggleMenu()">About</a>
-<a href="#gallery" onclick="toggleMenu()">Gallery</a>
-<a href="#find" onclick="toggleMenu()">Find Us</a>
-
+<a href="#" onclick="showSection('about');toggleMenu()">About</a>
+<a href="#" onclick="showSection('gallery');toggleMenu()">Gallery</a>
+<a href="#" onclick="showSection('find');toggleMenu()">Find Us</a>
 <a class="fb" href="https://www.facebook.com/trawlermanscatch" target="_blank">Visit our Facebook</a>
 </nav>
 
@@ -168,6 +167,29 @@ menu.style.left=(menu.style.left==="0px")?"-260px":"0px";
 </script>
 <div style="background:#e6f4ff; padding:14px; text-align:center; font-weight:600; font-size:15px; border-top:2px solid #b5dcff;">
   🚤 Boat trips also available — please enquire with our staff
-</div>
+</div><script>
+function showSection(id){
+  // hide all sections
+  document.querySelectorAll("section").forEach(sec=>{
+    sec.style.display="none";
+  });
+
+  // show selected section
+  document.getElementById(id).style.display="block";
+
+  // close menu
+  document.getElementById("menu").style.left="-260px";
+}
+
+// hamburger open/close
+function toggleMenu(){
+  const menu=document.getElementById("menu");
+  if(menu.style.left==="0px"){
+    menu.style.left="-260px";
+  }else{
+    menu.style.left="0px";
+  }
+}
+</script>
 </body>
 </html>
