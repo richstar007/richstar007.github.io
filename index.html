@@ -1,170 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Little Blue Hut | Harbour Seafood</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #333;
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f7f7;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
+/* HEADER */
+header{
+    background:#0b3a5b;
+    color:white;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.hero {
-  background: linear-gradient(rgba(15,47,68,0.6), rgba(15,47,68,0.6)), url('harbour.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 120px 20px;
+.logo{
+    height:55px;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
+/* HAMBURGER */
+.menu-btn{
+    font-size:28px;
+    cursor:pointer;
 }
 
-.hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
+/* SLIDE MENU */
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#0b3a5b;
+    padding-top:80px;
+    transition:0.3s;
+    z-index:999;
 }
 
-.button {
-  background: #1f6f8b;
-  color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin: 5px;
-  display: inline-block;
-  font-weight: 600;
+.side-menu a{
+    display:block;
+    color:white;
+    padding:15px 25px;
+    text-decoration:none;
+    font-size:18px;
 }
 
-.section {
-  padding: 70px 20px;
-  text-align: center;
+.side-menu a:hover{
+    background:#125782;
 }
 
-.sand {
-  background: #f4e1c1;
+/* HERO */
+.hero{
+    background:url("images/hero.jpg") center/cover no-repeat;
+    height:320px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-shadow:0 2px 8px rgba(0,0,0,0.6);
+    font-size:32px;
+    font-weight:bold;
 }
 
-.dark {
-  background: #0f2f44;
-  color: white;
+/* CONTENT */
+.content{
+    max-width:900px;
+    margin:auto;
+    padding:25px;
+    text-align:center;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 6px;
-}
-
-footer {
-  background: #0f2f44;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
+.footer{
+    background:#0b3a5b;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
 }
 </style>
-</head>
-
-<body>
-
-<section class="hero">
-  <h1>Fresh Harbour Seafood & Shellfish</h1>
-  <p>Landed, Hand Selected & Beautifully Presented Daily</p>
-  <a href="#offer" class="button">⚓ Visit The Hut</a>
-  <a href="https://www.facebook.com/trawlermanscatch" class="button">🦞 Follow Us</a>
-</section>
-
-<section class="section sand">
-  <h2>From Harbour to Counter</h2>
-  <p>At The Little Blue Hut, our seafood reflects the working harbour around us. Responsibly sourced, hand selected, and carefully prepared daily to ensure it looks as exceptional as it tastes.</p>
-</section>
-
-<section id="offer" class="section">
-  <h2>What We Offer</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="crab.jpg" alt="Dressed Crab">
-      <h3>🦀 Dressed Crab & Lobster</h3>
-      <p>Freshly prepared and beautifully presented on ice.</p>
-    </div>
-    <div class="card">
-      <img src="prawns.jpg" alt="Prawns">
-      <h3>🦐 Fresh Prawns & Shellfish</h3>
-      <p>Premium quality, responsibly sourced.</p>
-    </div>
-    <div class="card">
-      <img src="fish.jpg" alt="Fresh Fish">
-      <h3>🐟 Seasonal Fish</h3>
-      <p>Subject to daily catch and availability.</p>
-    </div>
-    <div class="card">
-      <img src="oysters.jpg" alt="Oysters">
-      <h3>🦪 Oysters</h3>
-      <p>Available seasonally. Ask us what’s best today.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section dark">
-  <h2>A Feast for the Senses</h2>
-  <p>From vibrant colours and fresh ocean aromas to elegant presentation on crushed ice — every visit to The Little Blue Hut is designed to delight.</p>
-</section>
-
-<section class="section">
-  <h2>Harbour Gallery</h2>
-  <div class="gallery">
-    <img src="gallery1.jpg" alt="">
-    <img src="gallery2.jpg" alt="">
-    <img src="gallery3.jpg" alt="">
-    <img src="gallery4.jpg" alt="">
-  </div>
-</section>
-
-<footer>
-  <h3>The Little Blue Hut</h3>
-  <p>Harbour-Based Seafood Stall</p>
-  <p>Friday – 10am – 4pm<br>
-  Saturday – 10am – 4pm<br>
-  Sunday – 10am – 3pm (Bank Holiday Mondays)</p>
-  <p>Follow us on Facebook</p>
-</footer>
-
-</body>
-</html>
