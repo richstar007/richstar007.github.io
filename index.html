@@ -161,19 +161,22 @@ width="100%" height="300" loading="lazy"></iframe>
 
 <script>
 // open/close hamburger
+// open / close hamburger
 function toggleMenu(){
-  const menu = document.getElementById("menu");
+    const menu = document.getElementById("menu");
 
-  if(menu.style.left === "0px"){
-    menu.style.left = "-100%";
-    menu.style.pointerEvents = "none";
-    document.body.style.overflow = "auto";
-  }else{
-    menu.style.left = "0px";
-    menu.style.pointerEvents = "auto";
-    document.body.style.overflow = "hidden";
-  }
+    if(menu.style.left === "0px"){
+        menu.style.left = "-100%";
+        menu.style.pointerEvents = "none";
+        document.body.style.overflow = "auto";
+    }else{
+        menu.style.left = "0px";
+        menu.style.pointerEvents = "auto";
+        document.body.style.overflow = "hidden";
+    }
 }
+
+
 // show a page section
 function showSection(id){
 
@@ -183,15 +186,15 @@ function showSection(id){
   });
 
   // show selected section
-  document.getElementById(id).style.display="block";
-
+  
+document.getElementById(id).style.display = "block";
   // scroll to top (fixes iPhone freeze)
   window.scrollTo(0,0);
 
-  // fully close menu
+  menu.style.pointerEvents="none";
   192 const menu=document.getElementById("menu")
 193 menu.style.left="-260px";
-194 menu.style.pointerEvents="none"
+document.body.style.overflow = "auto";
 195
 196 // allow page to scroll again
 197 document.body.style.overflow
