@@ -8,18 +8,28 @@
 <style>
 body{
 margin:0;
-font-family:system-ui;
+font-family:system-ui,Arial;
 background:#f7f9fb;
 color:#1c2b33;
 }
-#gallery{
-display:none;
-}
+
 header{
 background:#0f3a4a;
 color:white;
-padding:20px;
+padding:24px 18px;
 text-align:center;
+position:relative;
+}
+
+header h1{
+margin:0;
+font-size:32px;
+}
+
+.tagline{
+margin-top:6px;
+font-size:18px;
+opacity:.9;
 }
 
 .menu-btn{
@@ -38,7 +48,7 @@ width:260px;
 height:100%;
 background:#0f3a4a;
 padding-top:60px;
-transition:0.3s;
+transition:.3s;
 }
 
 nav a{
@@ -53,21 +63,37 @@ nav a:hover{
 background:#125066;
 }
 
+.fb{
+background:#1877f2;
+margin:15px;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
+}
+
 section{
 padding:30px 18px;
 max-width:900px;
 margin:auto;
 }
 
+h2{
+margin-top:0;
+}
+
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:12px;
 }
 
 .gallery img{
 width:100%;
 border-radius:10px;
+}
+
+iframe{
+border-radius:12px;
 }
 </style>
 </head>
@@ -77,27 +103,53 @@ border-radius:10px;
 <header>
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 <h1>The Little Blue Hut</h1>
-Fresh Seafood & Shellfish
+<div class="tagline">Quality Seafood & Shellfish</div>
 </header>
 
 <nav id="menu">
 <a href="#about" onclick="toggleMenu()">About</a>
 <a href="#gallery" onclick="toggleMenu()">Gallery</a>
 <a href="#find" onclick="toggleMenu()">Find Us</a>
+
+<a class="fb" href="https://www.facebook.com/trawlermanscatch" target="_blank">Visit our Facebook</a>
 </nav>
 
 <section id="about">
 <h2>About Us</h2>
-<p>Responsibly sourced seafood, freshly prepared and served with pride.</p>
+<p>
+At The Little Blue Hut, we are committed to bringing you the highest-quality, responsibly sourced seafood that not only tastes exceptional but also looks stunning. All of our seafood is thoughtfully hand-selected and carefully tasted before being served.<br><br>
+
+We also sell hot & cold drinks, a selection of alcoholic beverages and delicious baguettes and freshly baked jacket potatoes.<br><br>
+
+We also offer free delivery to Sheppey and Sittingbourne (subject to a min £20 spend).
+</p>
 </section>
 
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="images/IMG_0294.jpeg">
+<img src="images/IMG_0634.jpeg">
+<img src="images/IMG_0638.jpeg">
+<img src="images/IMG_0641.jpeg">
+<img src="images/IMG_0643.jpeg">
+<img src="images/IMG_0644.jpeg">
+<img src="images/IMG_0645.jpeg">
+<img src="images/IMG_0646.jpeg">
+<img src="images/IMG_0648.jpeg">
+<img src="images/IMG_0649.jpeg">
+<img src="images/IMG_5691.jpeg">
+<img src="images/IMG_6264.jpeg">
+<img src="images/IMG_6905.jpeg">
+<img src="images/IMG_6906.jpeg">
+</div>
+</section>
 
 <section id="find">
 <h2>Find Us</h2>
 <iframe
-src="https://maps.google.com/maps?q=me115af&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300" style="border:0;border-radius:10px;">
-</iframe>
+src="https://maps.google.com/maps?q=The%20Little%20Blue%20Hut%2C%20South%20Street%2C%20Queenborough%2C%20ME11%205AF&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300" loading="lazy"></iframe>
 </section>
 
 <script>
