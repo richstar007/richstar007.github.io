@@ -3,206 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Little Blue Hut</title>
 
 <style>
+
+/* =========================
+   COLOURS
+========================= */
 :root{
---blue:#0d5c8f;
---light:#e9f6ff;
---accent:#1fb6ff;
+--deep:#0c3b46;
+--sea:#0f5c6b;
+--light:#e8f6f9;
+--accent:#1fa4c7;
 }
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4fbff;
-color:#333;
+font-family: system-ui, -apple-system, Arial, sans-serif;
+background:#f5fbfd;
+color:#17343c;
 }
 
-/* HEADER /
-header{
-background:linear-gradient(180deg,#0d5c8f,#0a4b73);
-color:white;
-text-align:center;
-padding:30px 15px;
-}
-
-header img{
-max-width:260px;
-width:90%;
-}
-
-.tag{
-margin-top:10px;
-letter-spacing:2px;
-}
-
-/ NAV /
-nav{
+/* =========================
+   HEADER
+========================= */
+.topbar{
+display:flex;
+align-items:center;
+padding:14px 16px;
 background:white;
-box-shadow:0 2px 8px rgba(0,0,0,0.15);
 position:sticky;
 top:0;
-z-index:100;
+z-index:10;
+box-shadow:0 2px 6px rgba(0,0,0,.12);
 }
 
-nav ul{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-list-style:none;
-margin:0;
-padding:10px;
-gap:18px;
+.hamburger{
+font-size:26px;
+cursor:pointer;
+margin-right:12px;
 }
 
-nav a{
+.title{
+font-weight:700;
+font-size:20px;
+}
+
+/* =========================
+   SLIDE MENU
+========================= */
+.menu{
+position:fixed;
+top:0;
+left:-260px;
+width:260px;
+height:100%;
+background:#d9edf3;
+padding-top:70px;
+transition:.3s;
+z-index:20;
+}
+
+.menu a{
+display:block;
+padding:18px 22px;
 text-decoration:none;
-color:var(--blue);
-font-weight:bold;
+font-weight:600;
+color:#114852;
+border-bottom:1px solid rgba(0,0,0,.08);
 }
 
-/ STRIP /
-.strip{
-background:var(--accent);
+.menu a:hover{
+background:#c7e5ee;
+}
+
+.menu.open{
+left:0;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.25);
+display:none;
+z-index:15;
+}
+
+.overlay.show{
+display:block;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(#eaf7fb,#ffffff);
+}
+
+.hero h1{
+font-size:38px;
+margin:0;
+color:var(--deep);
+}
+
+.hero p{
+margin:10px 0;
+font-size:18px;
+}
+
+/* OPEN STRIP */
+.opening{
+background:var(--sea);
 color:white;
 text-align:center;
-padding:10px;
-font-weight:bold;
+padding:12px;
+font-weight:600;
 }
 
-/ SECTIONS /
+/* =========================
+   SECTIONS
+========================= */
 section{
-padding:40px 20px;
-max-width:1000px;
+max-width:900px;
 margin:auto;
+padding:40px 20px;
 }
 
 h2{
-color:var(--blue);
-text-align:center;
-margin-bottom:25px;
+color:var(--deep);
+font-size:30px;
+margin-bottom:10px;
 }
 
-/ MENU /
-.menu{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-.price{
-color:var(--accent);
-font-weight:bold;
-}
-
-/ GALLERY /
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
 gap:12px;
 }
 
 .gallery img{
 width:100%;
 border-radius:10px;
+height:120px;
+object-fit:cover;
 }
 
-/ SOCIAL /
-.social{
-text-align:center;
-}
-
-.social a{
-display:inline-block;
-margin:8px;
-padding:12px 18px;
-border-radius:30px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-}
-
-.fb{background:#1877f2;}
-.ig{background:#e1306c;}
-.tk{background:#000;}
-
-/ FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer{
-background:#0a4b73;
-color:white;
 text-align:center;
-padding:25px 15px;
-margin-top:30px;
+padding:30px;
+background:var(--deep);
+color:white;
+margin-top:40px;
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-<img src="logo.png" alt="The Little Blue Hut">
-<div class="tag">QUALITY SEAFOOD & SHELLFISH</div>
-</header>
+<!-- MENU -->
+<div id="menu" class="menu">
+<a href="#">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#find">Find Us</a>
+<a href="https://facebook.com" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/thelittlebluehut_qb" target="_blank">Instagram</a>
+<a href="https://www.tiktok.com/@thelittlebluehut.qb" target="_blank">TikTok</a>
+</div>
+<div id="overlay" class="overlay"></div>
 
-<nav>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#menu">Menu</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<div class="strip">
-Open Today • Fresh Seafood • Jacket Potatoes • Hot & Cold Drinks
+<!-- HEADER -->
+<div class="topbar">
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<div class="title">The Little Blue Hut</div>
 </div>
 
-<section id="about">
-<h2>Welcome</h2>
-<p style="text-align:center;">
-At The Little Blue Hut we serve high-quality, responsibly sourced seafood,
-freshly prepared and full of flavour. We also offer hot drinks, snacks,
-baguettes and our popular King Edward jacket potatoes.
+<div class="opening">
+Open Friday – Sunday • 10am – 4pm
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<h1>The Little Blue Hut</h1>
+<p>Fresh Seafood & Shellfish by Queenborough Creek</p>
+<p>Est. 2021</p>
+</div>
+
+<!-- ABOUT -->
+<section>
+<h2>About Us</h2>
+<p>
+Located beside Queenborough Creek, The Little Blue Hut is a small independent seaside seafood hut serving freshly prepared shellfish and hot food in a relaxed coastal setting.
+</p>
+
+<p>
+We carefully source our seafood for freshness and flavour and keep things simple — proper honest food done well.
+</p>
+
+<p>
+Alongside seafood we serve hot drinks, cold refreshments, alcoholic beverages, baguettes and freshly baked jacket potatoes — perfect to enjoy by the water after a walk along the harbour.
 </p>
 </section>
 
-<section id="menu">
-<h2>Jacket Potatoes</h2>
-
-<div class="menu">
-
-<div class="card">
-<h3>All Jacket Potatoes</h3>
-<p>Comes with coleslaw & side salad</p>
-<p class="price">£7.50</p>
-</div>
-
-<div class="card">
-<h3>Fillings</h3>
-<ul>
-<li>Prawn Mayo</li>
-<li>Tuna Mayo & Sweetcorn</li>
-<li>Cheese & Beans</li>
-<li>Chilli</li>
-<li>Chicken & Bacon</li>
-<li>Chicken Tikka</li>
-<li>Any Seafood Filling</li>
-</ul>
-<p><strong>Add cheese 50p</strong></p>
-</div>
-
-</div>
-</section>
-
+<!-- GALLERY -->
 <section id="gallery">
 <h2>Gallery</h2>
 <div class="gallery">
@@ -213,23 +221,30 @@ baguettes and our popular King Edward jacket potatoes.
 </div>
 </section>
 
-<section id="contact">
-<h2>Contact</h2>
-<p style="text-align:center;font-size:18px;">
-📞 <strong>07734 207042</strong><br>
-South Street, Queenborough ME11 5AF
+<!-- FIND US -->
+<section id="find">
+<h2>Find Us</h2>
+<p>
+South Street<br>
+Queenborough<br>
+ME11 5AF
 </p>
 
-<div class="social">
-<a class="fb" href="https://facebook.com" target="_blank">Facebook</a>
-<a class="ig" href="https://www.instagram.com/thelittlebluehut_qb" target="_blank">Instagram</a>
-<a class="tk" href="https://www.tiktok.com/@thelittlebluehut.qb" target="_blank">TikTok</a>
-</div>
+<p><strong>07734 207042</strong></p>
 </section>
 
 <footer>
 © The Little Blue Hut
 </footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("open");
+document.getElementById("overlay").classList.toggle("show");
+}
+
+document.getElementById("overlay").onclick = toggleMenu;
+</script>
 
 </body>
 </html>
