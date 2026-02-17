@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Little Blue Hut</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f2f7fa;
+color:#0f2f3a;
+}
+
+/* HEADER /
+.header{
+background:#0c3b4a;
+color:white;
+padding:16px;
+position:sticky;
+top:0;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.menu-btn{
+font-size:26px;
+cursor:pointer;
+}
+
+.nav{
+display:none;
+flex-direction:column;
+background:#0c3b4a;
+}
+
+.nav a{
+color:white;
+padding:14px;
+text-decoration:none;
+border-top:1px solid rgba(255,255,255,0.2);
+}
+
+.nav a:hover{
+background:#14566c;
+}
+
+/ HERO /
+.hero{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(rgba(12,59,74,0.75),rgba(12,59,74,0.75)),
+url('hero.jpg');
+background-size:cover;
+color:white;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+/ SECTIONS /
+.section{
+padding:40px 20px;
+max-width:900px;
+margin:auto;
+}
+
+h2{
+color:#0c3b4a;
+border-bottom:3px solid #58b6d4;
+display:inline-block;
+padding-bottom:6px;
+}
+
+/ MENU /
+.menu-item{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #ddd;
+}
+
+/ GALLERY /
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+}
+
+.gallery img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+}
+
+/ SOCIAL */
+.social{
+text-align:center;
+padding:30px;
+background:#0c3b4a;
+}
+
+.social a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-size:18px;
+display:inline-block;
+padding:10px 16px;
+background:#14566c;
+border-radius:6px;
+}
+
+.map iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<div class="logo">The Little Blue Hut</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+
+<div class="nav" id="nav">
+<a href="#about">About</a>
+<a href="#menu">Menu</a>
+<a href="#gallery">Gallery</a>
+<a href="#hours">Opening Times</a>
+<a href="#find">Find Us</a>
+<a href="https://facebook.com">Facebook</a>
+<a href="https://instagram.com">Instagram</a>
+<a href="https://tiktok.com">TikTok</a>
+</div>
+
+<div class="hero">
+<h1>The Little Blue Hut</h1>
+<p>Fresh Seafood & Shellfish by Queenborough Creek</p>
+</div>
+
+<div class="section" id="about">
+<h2>About Us</h2>
+<p>Located beside Queenborough Creek, The Little Blue Hut is a small independent seafood hut serving freshly prepared shellfish in a relaxed coastal setting.</p>
+<p>We carefully source our seafood for freshness and flavour — proper honest food done well.</p>
+</div>
+
+<div class="section" id="menu">
+<h2>Seafood Menu</h2>
+<div class="menu-item"><span>Dressed Crab</span><span>£12</span></div>
+<div class="menu-item"><span>Cockles</span><span>£5</span></div>
+<div class="menu-item"><span>Jellied Eels</span><span>£4.50</span></div>
+<div class="menu-item"><span>Large Eels</span><span>£6.50</span></div>
+</div>
+
+<div class="section" id="gallery">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+<img src="4.jpg">
+</div>
+</div>
+
+<div class="section" id="hours">
+<h2>Opening Times</h2>
+<p>Friday – Sunday<br>10am – 4pm</p>
+</div>
+
+<div class="section map" id="find">
+<h2>Find Us</h2>
+<iframe src="https://maps.google.com/maps?q=queenborough%20creek&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<div class="social">
+<a href="https://facebook.com">Facebook</a>
+<a href="https://instagram.com">Instagram</a>
+<a href="https://tiktok.com">TikTok</a>
+</div>
+
+<script>
+function toggleMenu(){
+var nav=document.getElementById("nav");
+nav.style.display = nav.style.display==="flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>
