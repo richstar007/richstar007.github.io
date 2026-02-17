@@ -6,167 +6,69 @@
 <title>The Little Blue Hut</title>
 
 <style>
-html{scroll-behavior:smooth;}
-
-body{
-  margin:0;
-  font-family:system-ui,Arial,sans-serif;
-  background:#f4f8fb;
-  color:#1b2b34;
-}
-
-/* top bar /
-.topbar{
-  background:#082833;
-  color:#fff;
-  text-align:center;
-  padding:8px;
-  font-size:14px;
-}
-
-/ header /
-header{
-  background:#0f3a4a;
-  color:#fff;
-  padding:26px 18px;
-  text-align:center;
-  position:relative;
-}
-
-header h1{margin:0;font-size:30px;}
-.tagline{opacity:.9;margin-top:6px}
-
-/ hamburger /
-.hamburger{
-  position:absolute;
-  left:15px;
-  top:22px;
-  font-size:26px;
-  cursor:pointer;
-}
-
-/ slide menu /
-#menu{
-  position:fixed;
-  top:0;
-  left:-260px;
-  width:260px;
-  height:100%;
-  background:#114b5f;
-  padding-top:80px;
-  transition:.3s;
-  z-index:1000;
-}
-
-#menu a{
-  display:block;
-  color:white;
-  padding:18px 22px;
-  text-decoration:none;
-  font-size:18px;
-}
-#menu a:hover{background:#1b6b84;}
-#menu hr{border:none;border-top:1px solid rgba(255,255,255,.2);margin:14px 18px;}
-
-section{
-  padding:40px 18px;
-  max-width:900px;
-  margin:auto;
-  scroll-margin-top:90px;
-}
-
-h2{color:#0f3a4a;}
-
-/ gallery /
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:12px;
-}
-.gallery img{width:100%;border-radius:10px;}
-
-/ socials /
-.socials{display:flex;gap:12px;margin-top:20px;}
-.socials a{
-  padding:12px 18px;
-  border-radius:8px;
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-}
-.insta{background:#d62976;}
-.tiktok{background:#111;}
-
-/ notice */
-.notice{
-  background:#e6f4ff;
-  padding:14px;
-  text-align:center;
-  font-weight:500;
-  margin-top:40px;
-}
+body{margin:0;font-family:system-ui;background:#f2fbff;color:#0a2a33}
+header{background:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,.08);position:sticky;top:0}
+.hamburger{font-size:28px;cursor:pointer}
+#menu{position:fixed;top:0;left:-260px;width:240px;height:100%;background:#e7f8ff;padding-top:70px;transition:.25s}
+#menu a{display:block;padding:15px 20px;text-decoration:none;color:#003b46;font-weight:600;border-bottom:1px solid #cfeef7}
+#menu.show{left:0}
+.hero{text-align:center;padding:60px 20px 30px}
+.open{background:#003b46;color:white;text-align:center;padding:8px;font-weight:600}
+section{padding:40px 20px;max-width:900px;margin:auto}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:12px}
+footer{margin-top:40px;background:#003b46;color:white;text-align:center;padding:18px}
 </style>
 </head>
 
 <body>
 
-<div class="topbar">🕒 Open Friday – Sunday • 10am – 4pm</div>
+<header>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<strong>The Little Blue Hut</strong>
+</header>
 
-<div id="menu">
+<nav id="menu">
 <a href="#about" onclick="toggleMenu()">About</a>
 <a href="#gallery" onclick="toggleMenu()">Gallery</a>
 <a href="#find" onclick="toggleMenu()">Find Us</a>
-<hr>
 <a href="https://www.instagram.com/thelittlebluehut_qb" target="_blank">Instagram</a>
 <a href="https://www.tiktok.com/@thelittlebluehut.qb" target="_blank">TikTok</a>
-<hr>
-<a href="menu.pdf" target="_blank">📄 View Menu</a>
-</div>
+</nav>
 
-<header>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
+<div class="open">Open Friday – Sunday • 10am – 4pm</div>
+
+<div class="hero">
 <h1>The Little Blue Hut</h1>
-<div class="tagline">Quality Seafood & Shellfish</div>
-</header>
+<p>Quality Seafood & Shellfish</p>
+</div>
 
 <section id="about">
 <h2>About Us</h2>
-<p>
-At The Little Blue Hut we provide responsibly sourced seafood and shellfish,
-carefully selected for quality and freshness.
-We also serve drinks, snacks, baguettes and freshly baked jacket potatoes.
-</p>
-
-<div class="socials">
-<a class="insta" href="https://www.instagram.com/thelittlebluehut_qb" target="_blank">Instagram</a>
-<a class="tiktok" href="https://www.tiktok.com/@thelittlebluehut.qb" target="_blank">TikTok</a>
-</div>
+<p>Responsibly sourced seafood and shellfish, plus drinks, snacks, baguettes and fresh jacket potatoes.</p>
 </section>
 
 <section id="gallery">
 <h2>Gallery</h2>
 <div class="gallery">
-<img src="images/photo1.jpg">
-<img src="images/photo2.jpg">
-<img src="images/photo3.jpg">
-<img src="images/photo4.jpg">
-<img src="images/photo5.jpg">
+<img src="images/1.jpg">
+<img src="images/2.jpg">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+<img src="images/5.jpg">
 </div>
 </section>
 
 <section id="find">
 <h2>Find Us</h2>
-<iframe src="https://maps.google.com/maps?q=Queenborough&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300" style="border:0;border-radius:12px;" loading="lazy"></iframe>
+<iframe src="https://maps.google.com/maps?q=Queenborough&z=13&output=embed"
+width="100%" height="320" style="border:0;border-radius:12px"></iframe>
 </section>
 
-<div class="notice">🚤 Boat trips also available — please enquire with our staff</div>
+<footer>© The Little Blue Hut</footer>
 
 <script>
-function toggleMenu(){
-  const menu=document.getElementById("menu");
-  menu.style.left = (menu.style.left==="0px") ? "-260px" : "0px";
-}
+function toggleMenu(){document.getElementById('menu').classList.toggle('show')}
 </script>
 
 </body>
