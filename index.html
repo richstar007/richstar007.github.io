@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Little Blue Hut</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f3f6f7;
+color:#123b40;
+}
+
+/* HEADER /
+header{
+background:#ffffff;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+.top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:14px 18px;
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.burger{
+font-size:26px;
+cursor:pointer;
+}
+
+/ SLIDE MENU /
+.menu{
+position:fixed;
+left:-260px;
+top:0;
+width:260px;
+height:100%;
+background:#cfe3ea;
+transition:.3s;
+padding-top:70px;
+}
+
+.menu a{
+display:block;
+padding:18px 22px;
+text-decoration:none;
+color:#123b40;
+font-weight:bold;
+border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.menu.open{
+left:0;
+}
+
+/ STRIP /
+.strip{
+background:#0e4a52;
+color:white;
+text-align:center;
+padding:12px;
+font-weight:bold;
+}
+
+/ HERO /
+.hero{
+padding:80px 20px 50px;
+text-align:center;
+background:#e7eff2;
+}
+
+.hero h1{
+font-size:40px;
+margin:0;
+}
+
+.hero p{
+font-size:18px;
+margin-top:10px;
+}
+
+/ CONTENT /
+.section{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
+
+h2{
+font-size:28px;
+margin-bottom:12px;
+}
+
+/ GALLERY /
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+}
+
+.gallery img{
+width:100%;
+height:190px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/ FOOTER */
+footer{
+background:#0e4a52;
+color:white;
+text-align:center;
+padding:24px;
+margin-top:40px;
+}
+
+.social a{
+margin:0 10px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="top">
+<div class="burger" onclick="toggleMenu()">☰</div>
+<div class="logo">The Little Blue Hut</div>
+</div>
+</header>
+
+<div id="menu" class="menu">
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#find">Find Us</a>
+<a href="https://facebook.com" target="_blank">Facebook</a>
+<a href="https://www.instagram.com/thelittlebluehut_qb?igsh=NmphZ3BuaGc5Mjhl" target="_blank">Instagram</a>
+<a href="https://www.tiktok.com/@thelittlebluehut.qb?_r=1&_t=ZN-93yksZoNNTi" target="_blank">TikTok</a>
+</div>
+
+<div class="strip">
+Open Friday – Sunday • 10am – 4pm
+</div>
+
+<section class="hero">
+<h1>The Little Blue Hut</h1>
+<p>Fresh Seafood & Shellfish by Queenborough Creek</p>
+<p>Est. 2021</p>
+</section>
+
+<section class="section" id="about">
+<h2>About Us</h2>
+<p>
+Located beside Queenborough Creek, The Little Blue Hut is a small independent seaside seafood hut serving freshly prepared shellfish and hot food in a relaxed coastal setting.
+</p>
+<p>
+We carefully source our seafood for freshness and flavour and serve simple food done properly. Alongside seafood we offer hot drinks, cold refreshments, baguettes and freshly baked jacket potatoes.
+</p>
+</section>
+
+<section class="section" id="gallery">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="images/1.jpg">
+<img src="images/2.jpg">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+<img src="images/5.jpg">
+<img src="images/6.jpg">
+</div>
+</section>
+
+<section class="section" id="find">
+<h2>Find Us</h2>
+<p>South Street<br>Queenborough<br>ME11</p>
+</section>
+
+<footer>
+<div class="social">
+<a href="https://facebook.com">Facebook</a>
+<a href="https://www.instagram.com/thelittlebluehut_qb?igsh=NmphZ3BuaGc5Mjhl">Instagram</a>
+<a href="https://www.tiktok.com/@thelittlebluehut.qb?_r=1&_t=ZN-93yksZoNNTi">TikTok</a>
+</div>
+<p>© The Little Blue Hut</p>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
